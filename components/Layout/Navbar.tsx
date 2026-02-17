@@ -83,6 +83,18 @@ const Navbar: React.FC = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${isScrolled
@@ -170,12 +182,15 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-white z-50"
+        <motion.button
+          className="md:hidden text-white z-50 p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          whileTap={{ scale: 0.9 }}
+          animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
+          transition={{ duration: 0.3 }}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
+        </motion.button>
 
         {/* Mobile Nav Overlay */}
         <AnimatePresence>
@@ -184,61 +199,97 @@ const Navbar: React.FC = () => {
               initial={{ opacity: 0, x: '100%' }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '100%' }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="fixed inset-0 bg-[#0f0f0f] flex flex-col items-center justify-center gap-6 md:hidden z-[60]"
+              transition={{
+                type: 'spring',
+                damping: 25,
+                stiffness: 200,
+                mass: 0.8
+              }}
+              className="fixed inset-0 bg-[#0f0f0f] flex flex-col items-center justify-start pt-24 pb-10 gap-6 md:hidden z-[60] overflow-y-auto"
             >
-              {/* Close Button */}
-              <button
+              {/* Close Button - Optional duplicate if we want one inside too, keeping logic consistent */}
+              <motion.button
                 className="absolute top-6 right-6 text-white hover:text-[#F58220] transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
               >
                 <X size={28} />
-              </button>
-              {/* Projects with expandable sub-menu */}
-              <div className="flex flex-col items-center">
-                <button
-                  onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
-                  className="flex items-center gap-2 text-2xl font-bold tracking-tight text-white hover:text-[#F58220] transition-colors"
-                >
-                  Projects
-                  <ChevronDown
-                    size={20}
-                    className={`transition-transform duration-300 ${mobileProjectsOpen ? 'rotate-180 text-[#F58220]' : ''}`}
-                  />
-                </button>
-                <AnimatePresence>
-                  {mobileProjectsOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden flex flex-col items-center gap-3 mt-3"
-                    >
-                      {PROJECT_SUBITEMS.map((item) => (
-                        <button
-                          key={item.name}
-                          onClick={() => handleNavClick(item.href)}
-                          className="text-base text-gray-400 hover:text-[#F58220] transition-colors"
-                        >
-                          {item.name}
-                        </button>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+              </motion.button>
 
-              {/* Other Links */}
-              {navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => handleNavClick(link.href)}
-                  className="text-2xl font-bold tracking-tight text-white hover:text-[#F58220]"
+              <motion.div
+                className="flex flex-col items-center gap-6 w-full"
+                initial="closed"
+                animate="open"
+                exit="closed"
+                variants={{
+                  open: {
+                    transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+                  },
+                  closed: {
+                    transition: { staggerChildren: 0.05, staggerDirection: -1 }
+                  }
+                }}
+              >
+                {/* Projects with expandable sub-menu */}
+                <motion.div
+                  className="flex flex-col items-center w-full"
+                  variants={{
+                    open: { opacity: 1, y: 0 },
+                    closed: { opacity: 0, y: 20 }
+                  }}
                 >
-                  {link.name}
-                </button>
-              ))}
+                  <button
+                    onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
+                    className="flex items-center gap-2 text-2xl font-bold tracking-tight text-white hover:text-[#F58220] transition-colors"
+                  >
+                    Projects
+                    <ChevronDown
+                      size={20}
+                      className={`transition-transform duration-300 ${mobileProjectsOpen ? 'rotate-180 text-[#F58220]' : ''}`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {mobileProjectsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden flex flex-col items-center gap-3 mt-3"
+                      >
+                        {PROJECT_SUBITEMS.map((item) => (
+                          <motion.button
+                            key={item.name}
+                            onClick={() => handleNavClick(item.href)}
+                            className="text-base text-gray-400 hover:text-[#F58220] transition-colors"
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            {item.name}
+                          </motion.button>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+
+                {/* Other Links */}
+                {navLinks.map((link) => (
+                  <motion.button
+                    key={link.name}
+                    onClick={() => handleNavClick(link.href)}
+                    className="text-2xl font-bold tracking-tight text-white hover:text-[#F58220]"
+                    variants={{
+                      open: { opacity: 1, y: 0 },
+                      closed: { opacity: 0, y: 20 }
+                    }}
+                  >
+                    {link.name}
+                  </motion.button>
+                ))}
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

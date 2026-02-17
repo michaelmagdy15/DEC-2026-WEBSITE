@@ -83,9 +83,9 @@ const ProjectTimeline: React.FC = () => {
                         <div className="w-[85vw] sm:w-[40vw] flex-shrink-0 flex items-center justify-center ml-6 sm:ml-10">
                             <div className="text-center">
                                 <h4 className="text-xl sm:text-3xl text-white font-bold mb-4">Explore More</h4>
-                                <button className="px-8 py-3 bg-[#F58220] text-white font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+                                <a href="#major-projects" className="px-8 py-3 bg-[#F58220] text-white font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors inline-block">
                                     All Projects
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </motion.div>

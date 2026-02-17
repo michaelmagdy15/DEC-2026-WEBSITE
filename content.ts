@@ -169,6 +169,147 @@ export const PROJECTS: Project[] = [
             { label: "Span", value: "85m" },
             { label: "Steel", value: "12,000 tons" }
         ]
+    },
+    {
+        id: 5,
+        title: "Ministry of Justice and Federal Courts Complex",
+        location: "Khalifa City A, Abu Dhabi",
+        year: "2020",
+        category: "Government",
+        description: "A landmark government complex designed for EREC, featuring a total build-up area of 50,000 sq.m. The project includes design and supervision of the main ministry building and federal courts.",
+        image: "https://picsum.photos/1920/1080?random=5",
+        gallery: [
+            "https://picsum.photos/800/600?random=51",
+            "https://picsum.photos/800/600?random=52"
+        ],
+        stats: [
+            { label: "Cost", value: "430M AED" },
+            { label: "Area", value: "50,000 sqm" },
+            { label: "Client", value: "EREC" }
+        ]
+    },
+    {
+        id: 6,
+        title: "Emirates Identity Authority Service Point Building",
+        location: "UAE (Multiple Locations)",
+        year: "2015",
+        category: "Government",
+        description: "13 office buildings across the UAE responsible for issuing identity cards and citizenship facilities. The modern design is evolved from the Emirates Identity logo, making each building unique and special.",
+        image: "https://picsum.photos/1920/1080?random=6",
+        gallery: [
+            "https://picsum.photos/800/600?random=61",
+            "https://picsum.photos/800/600?random=62"
+        ],
+        stats: [
+            { label: "Cost", value: "120M AED" },
+            { label: "Buildings", value: "13" },
+            { label: "Client", value: "EIDA" }
+        ]
+    },
+    {
+        id: 7,
+        title: "Higher College of Technology - Dibba",
+        location: "Dibba, Al Fujairah",
+        year: "2024",
+        category: "Education",
+        description: "A turnkey governmental project in the Northern Emirates ensuring high-quality educational technology. The facility has a total buildup area of 19,830 sqm.",
+        image: "https://picsum.photos/1920/1080?random=7",
+        gallery: [
+            "https://picsum.photos/800/600?random=71",
+            "https://picsum.photos/800/600?random=72"
+        ],
+        stats: [
+            { label: "Cost", value: "180M AED" },
+            { label: "Area", value: "19,830 sqm" },
+            { label: "Client", value: "EREC" }
+        ]
+    },
+    {
+        id: 8,
+        title: "Sheikh Khalifa Centre for Genetic Engineering & Biotechnology",
+        location: "UAE",
+        year: "2024",
+        category: "Technology",
+        description: "A specialized institute of technology for genetic engineering and biotechnology, featuring state-of-the-art research facilities.",
+        image: "https://picsum.photos/1920/1080?random=8",
+        gallery: [
+            "https://picsum.photos/800/600?random=81",
+            "https://picsum.photos/800/600?random=82"
+        ],
+        stats: [
+            { label: "Client", value: "Gov Owned" },
+            { label: "Type", value: "Institute" }
+        ]
+    },
+    {
+        id: 9,
+        title: "Water Bodies Response Center",
+        location: "Abu Dhabi, UAE",
+        year: "2026",
+        category: "Government",
+        description: "A specialized response center designed for AD Police with a total build-up area of 5,000 sq.m. The project is currently under construction.",
+        image: "https://picsum.photos/1920/1080?random=9",
+        gallery: [
+            "https://picsum.photos/800/600?random=91",
+            "https://picsum.photos/800/600?random=92"
+        ],
+        stats: [
+            { label: "Cost", value: "40M AED" },
+            { label: "Area", value: "5,000 sqm" },
+            { label: "Client", value: "AD Police" }
+        ]
+    },
+    {
+        id: 10,
+        title: "Civil Defense Center",
+        location: "Abu Dhabi, UAE",
+        year: "2026",
+        category: "Government",
+        description: "A state-of-the-art civil defense facility designed for AD Police. The project covers a build-up area of 5,000 sq.m and is set for completion in 2026.",
+        image: "https://picsum.photos/1920/1080?random=10",
+        gallery: [
+            "https://picsum.photos/800/600?random=101",
+            "https://picsum.photos/800/600?random=102"
+        ],
+        stats: [
+            { label: "Cost", value: "40M AED" },
+            { label: "Area", value: "5,000 sqm" },
+            { label: "Client", value: "AD Police" }
+        ]
+    },
+    {
+        id: 11,
+        title: "Residential Building",
+        location: "UAE",
+        year: "2024",
+        category: "Residential",
+        description: "A modern multi-story residential building featuring luxury apartments and state-of-the-art facilities. Designed to provide a superior living experience.",
+        image: "https://picsum.photos/1920/1080?random=11",
+        gallery: [
+            "https://picsum.photos/800/600?random=111",
+            "https://picsum.photos/800/600?random=112"
+        ],
+        stats: [
+            { label: "Client", value: "Private" },
+            { label: "Type", value: "Tower" }
+        ]
+    },
+    {
+        id: 12,
+        title: "Residential Compound",
+        location: "UAE",
+        year: "2024",
+        category: "Residential",
+        description: "This luxurious compound consist of 58 luxury villas and a central health club. The whole idea of the project was to bring people together by providing better living atmosphere and high quality amenities.",
+        image: "https://picsum.photos/1920/1080?random=12",
+        gallery: [
+            "https://picsum.photos/800/600?random=121",
+            "https://picsum.photos/800/600?random=122"
+        ],
+        stats: [
+            { label: "Units", value: "58 Villas" },
+            { label: "Client", value: "Private" }
+        ]
     }
 ];
 
@@ -311,7 +452,10 @@ export const MAJOR_PROJECTS_CATEGORIES = [
             "Criminal Investigation Department",
             "Halcon Headquarter Building – Abu-Dhabi, U.A.E.",
             "General Secretariat of the Executive Council",
-            "Higher College of Technology – DIBBA AL Fujairah"
+            "Higher College of Technology – DIBBA AL Fujairah",
+            "Water Bodies Response Center",
+            "Civil Defense Center",
+            "Sheikh Khalifa Centre for Genetic Engineering & Biotechnology"
         ],
         image: IMAGES.MAJOR_PROJECTS.GOVERNMENT
     },
@@ -381,5 +525,17 @@ export const GOVERNMENT_PROJECTS_GALLERY = [
     {
         title: "Halcon Headquarter Building – Abu-Dhabi, U.A.E.",
         image: IMAGES.GOVERNMENT_GALLERY.HALCON
+    },
+    {
+        title: "Water Bodies Response Center",
+        image: "https://picsum.photos/800/600?random=92"
+    },
+    {
+        title: "Civil Defense Center",
+        image: "https://picsum.photos/800/600?random=102"
+    },
+    {
+        title: "Sheikh Khalifa Centre for Genetic Engineering & Biotechnology",
+        image: "https://picsum.photos/800/600?random=82"
     }
 ];

@@ -25,7 +25,7 @@ const MajorProjects: React.FC = () => {
     };
 
     return (
-        <section className="py-16 sm:py-24 bg-[#050505] min-h-screen flex items-center relative overflow-hidden">
+        <section id="major-projects" className="py-16 sm:py-24 bg-[#050505] min-h-screen flex items-center relative overflow-hidden">
             {/* Background Texture/Overlay */}
             <div className="absolute inset-0 opacity-10 pointer-events-none"
                 style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/cubes.png")' }}></div>
