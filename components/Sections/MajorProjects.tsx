@@ -25,20 +25,20 @@ const MajorProjects: React.FC = () => {
     };
 
     return (
-        <section className="py-24 bg-[#050505] min-h-screen flex items-center relative overflow-hidden">
+        <section className="py-16 sm:py-24 bg-[#050505] min-h-screen flex items-center relative overflow-hidden">
             {/* Background Texture/Overlay */}
             <div className="absolute inset-0 opacity-10 pointer-events-none"
                 style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/cubes.png")' }}></div>
 
-            <div className="container mx-auto px-4 max-w-7xl relative z-10">
-                <div className="flex flex-col lg:flex-row gap-0 lg:gap-12 items-stretch">
+            <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
 
                     {/* Left Side: Featured Image & Title */}
                     <div className="w-full lg:w-5/12 flex flex-col gap-6 relative">
                         {/* Decorative line */}
                         <div className="absolute -left-4 top-10 bottom-10 w-1 bg-gradient-to-b from-[#F58220] to-transparent opacity-50 hidden lg:block" />
 
-                        <div className="relative h-[400px] lg:h-[600px] w-full rounded-sm overflow-hidden shadow-2xl border border-white/10 group">
+                        <div className="relative h-[280px] sm:h-[400px] lg:h-[600px] w-full rounded-sm overflow-hidden shadow-2xl border border-white/10 group">
                             <AnimatePresence mode="wait">
                                 <motion.img
                                     key={activeId}
@@ -54,12 +54,12 @@ const MajorProjects: React.FC = () => {
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
 
                             {/* Overlay Title Block */}
-                            <div className="absolute bottom-10 left-0 bg-[#0a0a0a]/95 backdrop-blur-md p-8 max-w-[90%] shadow-2xl border-r-4 border-[#F58220]">
-                                <h3 className="text-xs font-bold tracking-[0.2em] text-[#888] uppercase mb-2">Dar Al Khalij</h3>
-                                <h2 className="text-4xl lg:text-5xl font-extrabold leading-none text-white">
+                            <div className="absolute bottom-4 sm:bottom-10 left-0 bg-[#0a0a0a]/95 backdrop-blur-md p-4 sm:p-8 max-w-[90%] shadow-2xl border-r-4 border-[#F58220]">
+                                <h3 className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#888] uppercase mb-1 sm:mb-2">Dar Al Khalij</h3>
+                                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-none text-white">
                                     MAJOR <br /> PROJECTS
                                 </h2>
-                                <h2 className="text-4xl lg:text-5xl font-extrabold leading-none text-[#F58220] mt-1">
+                                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-none text-[#F58220] mt-1">
                                     REFERENCES
                                 </h2>
                             </div>
@@ -67,7 +67,7 @@ const MajorProjects: React.FC = () => {
                     </div>
 
                     {/* Right Side: Category Blocks */}
-                    <div className="w-full lg:w-7/12 flex flex-col justify-center gap-4 pl-0 lg:pl-4">
+                    <div className="w-full lg:w-7/12 flex flex-col justify-center gap-2 sm:gap-4 pl-0 lg:pl-4 mt-4 lg:mt-0">
                         {MAJOR_PROJECTS_CATEGORIES.map((category) => {
                             const colors = getColors(category.id);
                             const isActive = activeId === category.id;
@@ -76,11 +76,11 @@ const MajorProjects: React.FC = () => {
                                 <motion.div
                                     key={category.id}
                                     onMouseEnter={() => setActiveId(category.id)}
-                                    className={`relative flex cursor-pointer transition-all duration-300 transform ${isActive ? 'scale-105 z-20 shadow-[0_10px_30px_rgba(0,0,0,0.5)]' : 'opacity-70 hover:opacity-100 hover:scale-[1.02]'}`}
+                                    className={`relative flex cursor-pointer transition-all duration-300 transform ${isActive ? 'sm:scale-105 z-20 shadow-[0_10px_30px_rgba(0,0,0,0.5)]' : 'opacity-70 hover:opacity-100 hover:scale-[1.02]'}`}
                                 >
                                     {/* Number Block */}
                                     <div
-                                        className="w-24 flex items-center justify-center text-3xl font-bold transition-colors duration-300"
+                                        className="w-14 sm:w-24 flex items-center justify-center text-xl sm:text-3xl font-bold transition-colors duration-300"
                                         style={{ backgroundColor: colors.numberBg, color: '#fff' }}
                                     >
                                         {category.id}
@@ -88,10 +88,10 @@ const MajorProjects: React.FC = () => {
 
                                     {/* Content Block */}
                                     <div
-                                        className="flex-1 p-6 border-l border-white/5 transition-colors duration-300"
+                                        className="flex-1 p-3 sm:p-6 border-l border-white/5 transition-colors duration-300"
                                         style={{ backgroundColor: colors.contentBg, color: colors.text }}
                                     >
-                                        <h3 className={`text-lg font-bold uppercase mb-2 tracking-wide ${isActive ? 'text-white' : 'text-[#888]'}`}>
+                                        <h3 className={`text-sm sm:text-lg font-bold uppercase mb-2 tracking-wide ${isActive ? 'text-white' : 'text-[#888]'}`}>
                                             {category.title}
                                         </h3>
                                         {isActive && (

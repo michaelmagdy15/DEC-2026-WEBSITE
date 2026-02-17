@@ -15,12 +15,12 @@ const Services: React.FC = () => {
     const activeService = SERVICES.find(s => s.id === activeServiceId) || SERVICES[0];
 
     return (
-        <section id="services" className="relative min-h-screen bg-[#050505] flex items-center justify-center overflow-hidden py-24">
+        <section id="services" className="relative min-h-screen bg-[#050505] flex items-center justify-center overflow-hidden py-16 sm:py-24">
 
             {/* Background Texture/Noise */}
             <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
 
-            <div className="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10 flex flex-col lg:flex-row gap-16 lg:gap-24">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl relative z-10 flex flex-col lg:flex-row gap-10 sm:gap-16 lg:gap-24">
 
                 {/* Left: Navigation */}
                 <div className="lg:w-1/3 flex flex-col">
@@ -28,26 +28,26 @@ const Services: React.FC = () => {
                         <span className="text-[#F58220] font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
                             Our Expertise
                         </span>
-                        <h2 className="text-5xl lg:text-6xl font-bold tracking-tighter text-white leading-none">
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter text-white leading-none">
                             Engineering <br />
                             <span className="text-[#444] font-thin">Services</span>
                         </h2>
                     </div>
 
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-row lg:flex-col gap-2 sm:gap-4 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
                         {SERVICES.map((service) => (
                             <button
                                 key={service.id}
                                 onClick={() => setActiveServiceId(service.id)}
-                                className={`group relative flex items-center gap-4 p-4 rounded-lg transition-all duration-300 border border-transparent ${activeServiceId === service.id
-                                        ? 'bg-[#1a1a1a] border-[#F58220]/30'
-                                        : 'hover:bg-white/[0.02]'
+                                className={`group relative flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg transition-all duration-300 border border-transparent flex-shrink-0 lg:flex-shrink ${activeServiceId === service.id
+                                    ? 'bg-[#1a1a1a] border-[#F58220]/30'
+                                    : 'hover:bg-white/[0.02]'
                                     }`}
                             >
                                 {/* Icon Box */}
                                 <div className={`p-3 rounded-md transition-all duration-300 ${activeServiceId === service.id
-                                        ? 'bg-[#F58220] text-white'
-                                        : 'bg-[#111] text-[#666] group-hover:text-white'
+                                    ? 'bg-[#F58220] text-white'
+                                    : 'bg-[#111] text-[#666] group-hover:text-white'
                                     }`}>
                                     {iconMap[service.icon]}
                                 </div>
@@ -78,21 +78,21 @@ const Services: React.FC = () => {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
                             transition={{ duration: 0.4 }}
-                            className="bg-[#111] border border-white/5 p-10 lg:p-14 rounded-3xl relative overflow-hidden shadow-2xl"
+                            className="bg-[#111] border border-white/5 p-6 sm:p-10 lg:p-14 rounded-3xl relative overflow-hidden shadow-2xl"
                         >
                             {/* Background Glow */}
                             <div className="absolute top-0 right-0 w-96 h-96 bg-[#F58220]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                             <div className="relative z-10">
-                                <h3 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                                <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
                                     {activeService.title}
                                 </h3>
 
-                                <p className="text-gray-400 text-lg leading-relaxed mb-12 border-l-2 border-[#F58220] pl-6">
+                                <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8 sm:mb-12 border-l-2 border-[#F58220] pl-4 sm:pl-6">
                                     {activeService.description}
                                 </p>
 
-                                <div className="grid md:grid-cols-2 gap-12">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
                                     {activeService.details.map((detail, idx) => (
                                         <div key={idx}>
                                             {detail.title && (

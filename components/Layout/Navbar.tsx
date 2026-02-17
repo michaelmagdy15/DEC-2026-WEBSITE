@@ -85,7 +85,9 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${isScrolled ? 'py-4 bg-black/90 backdrop-blur-md border-b border-white/5' : 'py-8 bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${isScrolled
+        ? `py-4 ${isMobileMenuOpen ? 'bg-transparent' : 'bg-black/90 backdrop-blur-md border-b border-white/5'}`
+        : 'py-8 bg-transparent'
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -183,8 +185,15 @@ const Navbar: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '100%' }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="fixed inset-0 bg-[#0f0f0f] flex flex-col items-center justify-center gap-6 md:hidden z-40"
+              className="fixed inset-0 bg-[#0f0f0f] flex flex-col items-center justify-center gap-6 md:hidden z-[60]"
             >
+              {/* Close Button */}
+              <button
+                className="absolute top-6 right-6 text-white hover:text-[#F58220] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <X size={28} />
+              </button>
               {/* Projects with expandable sub-menu */}
               <div className="flex flex-col items-center">
                 <button

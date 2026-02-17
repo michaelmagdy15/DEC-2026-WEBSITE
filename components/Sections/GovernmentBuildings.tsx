@@ -4,23 +4,23 @@ import { GOVERNMENT_PROJECTS_GALLERY } from '../../constants';
 
 const GovernmentBuildings: React.FC = () => {
     return (
-        <section className="py-24 bg-[#050505] text-white overflow-hidden">
+        <section className="py-16 sm:py-24 bg-[#050505] text-white overflow-hidden">
             <div className="container mx-auto px-4 max-w-7xl">
 
                 {/* Section Header - Orange Banner Style */}
-                <div className="relative mb-20 flex items-center justify-center">
+                <div className="relative mb-12 sm:mb-20 flex items-center justify-center">
                     <div className="absolute inset-0 flex items-center">
                         <div className="w-full h-[1px] bg-[#333]"></div>
                     </div>
-                    <div className="relative bg-[#F58220] py-4 px-12 shadow-[0_10px_30px_rgba(245,130,32,0.3)] transform -skew-x-12 border border-[#ffa050]">
-                        <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-widest text-white transform skew-x-12 text-center">
+                    <div className="relative bg-[#F58220] py-3 sm:py-4 px-6 sm:px-12 shadow-[0_10px_30px_rgba(245,130,32,0.3)] transform -skew-x-12 border border-[#ffa050]">
+                        <h2 className="text-lg sm:text-2xl md:text-3xl font-bold uppercase tracking-wider sm:tracking-widest text-white transform skew-x-12 text-center">
                             Government & Office Buildings
                         </h2>
                     </div>
                 </div>
 
                 {/* Grid Gallery */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
                     {GOVERNMENT_PROJECTS_GALLERY.map((project, index) => (
                         <motion.div
                             key={index}
