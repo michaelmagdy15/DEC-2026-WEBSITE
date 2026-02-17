@@ -81,23 +81,6 @@ export const BRANCHES = [
 ];
 
 // --- 2. FEATURED PROJECTS (Main Slider) ---
-// TO ADD A NEW PROJECT: Copy the block below and paste it inside the brackets [ ... ]
-/*
-  {
-    id: 5, // Use a unique number
-    title: "New Project Title",
-    location: "City, Country",
-    year: "2024",
-    category: "Commercial",
-    description: "Short description of the project.",
-    image: "/images/new-project.jpg",
-    gallery: ["/images/gallery1.jpg", "/images/gallery2.jpg"],
-    stats: [
-      { label: "Area", value: "10,000 sqm" },
-      { label: "Floors", value: "15" }
-    ]
-  },
-*/
 export const PROJECTS: Project[] = [
     {
         id: 1,
@@ -106,11 +89,11 @@ export const PROJECTS: Project[] = [
         year: "2018",
         category: "Commercial",
         description: "A 60-story mixed-use skyscraper defining the new downtown skyline with sustainable glass facade technology.",
-        image: "https://picsum.photos/1920/1080?random=1",
+        image: IMAGES.MAJOR_PROJECTS.HIGH_RISE,
         gallery: [
-            "https://picsum.photos/800/600?random=11",
-            "https://picsum.photos/800/600?random=12",
-            "https://picsum.photos/800/600?random=13"
+            "/images/Screenshot_22.png",
+            "/images/Screenshot_23.png",
+            "/images/Screenshot_24.png"
         ],
         stats: [
             { label: "Height", value: "340m" },
@@ -125,10 +108,10 @@ export const PROJECTS: Project[] = [
         year: "2020",
         category: "Cultural",
         description: "Integrating traditional Islamic geometric patterns with modern parametric design principles to create a gathering space for the future.",
-        image: "https://picsum.photos/1920/1080?random=2",
+        image: IMAGES.MAJOR_PROJECTS.RELIGIOUS,
         gallery: [
-            "https://picsum.photos/800/600?random=21",
-            "https://picsum.photos/800/600?random=22"
+            "/images/Screenshot_25.png",
+            "/images/Screenshot_26.png"
         ],
         stats: [
             { label: "Capacity", value: "5,000" },
@@ -142,11 +125,11 @@ export const PROJECTS: Project[] = [
         year: "2022",
         category: "Residential",
         description: "A luxury private community emphasizing privacy, shade, and passive cooling techniques, redefined for the modern family.",
-        image: "https://picsum.photos/1920/1080?random=3",
+        image: IMAGES.MAJOR_PROJECTS.RESIDENTIAL,
         gallery: [
-            "https://picsum.photos/800/600?random=31",
-            "https://picsum.photos/800/600?random=32",
-            "https://picsum.photos/800/600?random=33"
+            "/images/Screenshot_27.png",
+            "/images/Screenshot_28.png",
+            "/images/Screenshot_29.png"
         ],
         stats: [
             { label: "Units", value: "45" },
@@ -160,10 +143,10 @@ export const PROJECTS: Project[] = [
         year: "2024",
         category: "Public",
         description: "Our latest flagship project featuring a gravity-defying cantilever structure that pushes the boundaries of structural engineering.",
-        image: "https://picsum.photos/1920/1080?random=4",
+        image: IMAGES.MAJOR_PROJECTS.GOVERNMENT,
         gallery: [
-            "https://picsum.photos/800/600?random=41",
-            "https://picsum.photos/800/600?random=42"
+            "/images/Screenshot_22.png",
+            "/images/Screenshot_23.png"
         ],
         stats: [
             { label: "Span", value: "85m" },
@@ -177,10 +160,10 @@ export const PROJECTS: Project[] = [
         year: "2020",
         category: "Government",
         description: "A landmark government complex designed for EREC, featuring a total build-up area of 50,000 sq.m. The project includes design and supervision of the main ministry building and federal courts.",
-        image: "https://picsum.photos/1920/1080?random=5",
+        image: IMAGES.GOVERNMENT_GALLERY.JUSTICE,
         gallery: [
-            "https://picsum.photos/800/600?random=51",
-            "https://picsum.photos/800/600?random=52"
+            "/images/Screenshot_24.png",
+            "/images/Screenshot_25.png"
         ],
         stats: [
             { label: "Cost", value: "430M AED" },
@@ -195,10 +178,10 @@ export const PROJECTS: Project[] = [
         year: "2015",
         category: "Government",
         description: "13 office buildings across the UAE responsible for issuing identity cards and citizenship facilities. The modern design is evolved from the Emirates Identity logo, making each building unique and special.",
-        image: "https://picsum.photos/1920/1080?random=6",
+        image: IMAGES.GOVERNMENT_GALLERY.EMIRATES_ID,
         gallery: [
-            "https://picsum.photos/800/600?random=61",
-            "https://picsum.photos/800/600?random=62"
+            "/images/Screenshot_26.png",
+            "/images/Screenshot_27.png"
         ],
         stats: [
             { label: "Cost", value: "120M AED" },
@@ -213,10 +196,10 @@ export const PROJECTS: Project[] = [
         year: "2024",
         category: "Education",
         description: "A turnkey governmental project in the Northern Emirates ensuring high-quality educational technology. The facility has a total buildup area of 19,830 sqm.",
-        image: "https://picsum.photos/1920/1080?random=7",
+        image: IMAGES.GOVERNMENT_GALLERY.COLLEGE,
         gallery: [
-            "https://picsum.photos/800/600?random=71",
-            "https://picsum.photos/800/600?random=72"
+            "/images/Screenshot_28.png",
+            "/images/Screenshot_29.png"
         ],
         stats: [
             { label: "Cost", value: "180M AED" },
@@ -231,10 +214,10 @@ export const PROJECTS: Project[] = [
         year: "2024",
         category: "Technology",
         description: "A specialized institute of technology for genetic engineering and biotechnology, featuring state-of-the-art research facilities.",
-        image: "https://picsum.photos/1920/1080?random=8",
+        image: "/images/Screenshot_18.png",
         gallery: [
-            "https://picsum.photos/800/600?random=81",
-            "https://picsum.photos/800/600?random=82"
+            "/images/Screenshot_22.png",
+            "/images/Screenshot_23.png"
         ],
         stats: [
             { label: "Client", value: "Gov Owned" },
@@ -248,10 +231,10 @@ export const PROJECTS: Project[] = [
         year: "2026",
         category: "Government",
         description: "A specialized response center designed for AD Police with a total build-up area of 5,000 sq.m. The project is currently under construction.",
-        image: "https://picsum.photos/1920/1080?random=9",
+        image: "/images/Screenshot_15.png",
         gallery: [
-            "https://picsum.photos/800/600?random=91",
-            "https://picsum.photos/800/600?random=92"
+            "/images/Screenshot_24.png",
+            "/images/Screenshot_25.png"
         ],
         stats: [
             { label: "Cost", value: "40M AED" },
@@ -266,10 +249,10 @@ export const PROJECTS: Project[] = [
         year: "2026",
         category: "Government",
         description: "A state-of-the-art civil defense facility designed for AD Police. The project covers a build-up area of 5,000 sq.m and is set for completion in 2026.",
-        image: "https://picsum.photos/1920/1080?random=10",
+        image: "/images/Screenshot_13.png",
         gallery: [
-            "https://picsum.photos/800/600?random=101",
-            "https://picsum.photos/800/600?random=102"
+            "/images/Screenshot_26.png",
+            "/images/Screenshot_27.png"
         ],
         stats: [
             { label: "Cost", value: "40M AED" },
@@ -284,10 +267,10 @@ export const PROJECTS: Project[] = [
         year: "2024",
         category: "Residential",
         description: "A modern multi-story residential building featuring luxury apartments and state-of-the-art facilities. Designed to provide a superior living experience.",
-        image: "https://picsum.photos/1920/1080?random=11",
+        image: IMAGES.MAJOR_PROJECTS.RESIDENTIAL,
         gallery: [
-            "https://picsum.photos/800/600?random=111",
-            "https://picsum.photos/800/600?random=112"
+            "/images/Screenshot_28.png",
+            "/images/Screenshot_29.png"
         ],
         stats: [
             { label: "Client", value: "Private" },
@@ -301,10 +284,10 @@ export const PROJECTS: Project[] = [
         year: "2024",
         category: "Residential",
         description: "This luxurious compound consist of 58 luxury villas and a central health club. The whole idea of the project was to bring people together by providing better living atmosphere and high quality amenities.",
-        image: "https://picsum.photos/1920/1080?random=12",
+        image: IMAGES.MAJOR_PROJECTS.RESIDENTIAL,
         gallery: [
-            "https://picsum.photos/800/600?random=121",
-            "https://picsum.photos/800/600?random=122"
+            "/images/Screenshot_22.png",
+            "/images/Screenshot_23.png"
         ],
         stats: [
             { label: "Units", value: "58 Villas" },
@@ -314,19 +297,6 @@ export const PROJECTS: Project[] = [
 ];
 
 // --- 3. SERVICES ---
-// TO ADD A NEW SERVICE: Copy the block below and paste inside [ ... ]
-/*
-  {
-    id: "unique-id",
-    title: "New Service",
-    description: "Service description.",
-    icon: "ruler", // Options: ruler, frame, zap, hardhat
-    image: "/images/service.jpg",
-    details: [
-      { title: "Sub-Section", items: ["Item 1", "Item 2"] }
-    ]
-  },
-*/
 export const SERVICES: Service[] = [
     {
         id: "arch",
@@ -427,15 +397,6 @@ export const SERVICES: Service[] = [
 ];
 
 // --- 4. MAJOR PROJECT REFERENCES ---
-// TO ADD A NEW CATEGORY: Copy the block below and paste inside [ ... ]
-/*
-  {
-    id: "06",
-    title: "NEW CATEGORY NAME",
-    items: ["Project Name 1", "Project Name 2"],
-    image: "/images/category-image.jpg"
-  },
-*/
 export const MAJOR_PROJECTS_CATEGORIES = [
     {
         id: "01",
@@ -494,13 +455,6 @@ export const MAJOR_PROJECTS_CATEGORIES = [
 ];
 
 // --- 5. GOVERNMENT & OFFICE BUILDINGS GALLERY ---
-// TO ADD A NEW BUILDING: Copy the block below and paste inside [ ... ]
-/*
-  {
-    title: "Building Name",
-    image: "/images/building.jpg"
-  },
-*/
 export const GOVERNMENT_PROJECTS_GALLERY = [
     {
         title: "General Secretariat of the Executive Council",
@@ -528,14 +482,14 @@ export const GOVERNMENT_PROJECTS_GALLERY = [
     },
     {
         title: "Water Bodies Response Center",
-        image: "https://picsum.photos/800/600?random=92"
+        image: "/images/Screenshot_24.png"
     },
     {
         title: "Civil Defense Center",
-        image: "https://picsum.photos/800/600?random=102"
+        image: "/images/Screenshot_25.png"
     },
     {
         title: "Sheikh Khalifa Centre for Genetic Engineering & Biotechnology",
-        image: "https://picsum.photos/800/600?random=82"
+        image: "/images/Screenshot_26.png"
     }
 ];

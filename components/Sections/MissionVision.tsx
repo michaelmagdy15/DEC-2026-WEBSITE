@@ -15,7 +15,7 @@ const MissionVision: React.FC = () => {
         onMouseLeave={() => setHoveredSection(null)}
       >
         {/* Background Image - Subtle & Architectural */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 grayscale transition-all duration-700 group-hover:opacity-40 group-hover:scale-105" />
+        <div className="absolute inset-0 bg-[url('/images/Screenshot_20.png')] bg-cover bg-center opacity-20 grayscale transition-all duration-700 group-hover:opacity-40 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
 
         {/* Content Container */}
@@ -62,7 +62,7 @@ const MissionVision: React.FC = () => {
         onMouseLeave={() => setHoveredSection(null)}
       >
         {/* Background Image */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center opacity-20 grayscale transition-all duration-700 group-hover:opacity-40 group-hover:scale-105" />
+        <div className="absolute inset-0 bg-[url('/images/Screenshot_21.png')] bg-cover bg-center opacity-20 grayscale transition-all duration-700 group-hover:opacity-40 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
 
         {/* Content */}

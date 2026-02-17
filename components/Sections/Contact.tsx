@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
             <div className="flex gap-6 pt-4">
               {[
                 { name: 'LinkedIn', url: 'https://www.linkedin.com' },
-                { name: 'Instagram', url: 'https://www.instagram.com' },
+                { name: 'Instagram', url: 'https://www.instagram.com/dar_alkhalij_1989/' },
                 { name: 'Behance', url: 'https://www.behance.net' }
               ].map((social) => (
                 <a
