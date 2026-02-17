@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { LOGO_URL } from '../../constants';
 
 const Contact: React.FC = () => {
@@ -32,13 +33,16 @@ const Contact: React.FC = () => {
             <div>
               <h4 className="text-xs font-bold text-[#F58220] uppercase tracking-widest mb-2">Abu Dhabi Branch</h4>
               <p className="text-white">P.O. BOX: 45080<br />Abu Dhabi, United Arab Emirates</p>
+              <p className="text-white mt-1">Tel: +971 26443200</p>
+              <p className="text-white">Fax: +971 26443321</p>
+              <p className="text-white hover:text-[#F58220] transition-colors cursor-pointer">dec2000@emirates.net.ae</p>
             </div>
 
             <div>
-              <h4 className="text-xs font-bold text-[#F58220] uppercase tracking-widest mb-2">Contact</h4>
-              <p className="text-white hover:text-[#F58220] transition-colors cursor-pointer">dec2000@emirates.net.ae</p>
-              <p className="text-white">Tel: +971 26443200</p>
-              <p className="text-white">Fax: +971 26443321</p>
+              <h4 className="text-xs font-bold text-[#F58220] uppercase tracking-widest mb-2">Cairo Branch</h4>
+              <p className="text-white">P.O. BOX: 24, Fawzy, el Motaiee st.</p>
+              <p className="text-white mt-1">Tel: +20224153765</p>
+              <p className="text-white hover:text-[#F58220] transition-colors cursor-pointer">decegypt@gmail.com</p>
             </div>
 
             <div className="flex gap-6 pt-4">
@@ -54,8 +58,8 @@ const Contact: React.FC = () => {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest">
           <p>&copy; {new Date().getFullYear()} DEC Engineering Consultant. All Rights Reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Terms of Service</a>
+            <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-white">Terms of Service</Link>
           </div>
         </div>
       </div>
