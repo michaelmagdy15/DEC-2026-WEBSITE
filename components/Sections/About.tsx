@@ -56,7 +56,7 @@ const About: React.FC = () => {
                             className="absolute top-0 right-0 w-[65%] h-[60%] overflow-hidden bg-gray-900 z-10"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1572979251846-9d224d455d64?q=80&w=1200&auto=format&fit=crop"
+                                src="/images/dec-iconic-tower.png"
                                 alt="DEC Iconic Tower"
                                 className="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-700"
                             />
@@ -71,7 +71,7 @@ const About: React.FC = () => {
                             className="absolute bottom-0 left-0 w-[65%] h-[50%] overflow-hidden bg-gray-900 z-20 shadow-2xl shadow-black/50 border-4 border-[#0f0f0f]"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1629166938959-1cb4b3017758?q=80&w=1200&auto=format&fit=crop"
+                                src="/images/Screenshot_19.png"
                                 alt="DEC Modern Architecture"
                                 className="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-700"
                             />
