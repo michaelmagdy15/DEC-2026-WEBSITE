@@ -16,6 +16,9 @@ import GovernmentBuildingsPage from './components/Pages/GovernmentBuildingsPage'
 import TermsOfService from './components/Pages/TermsOfService';
 import PrivacyPolicy from './components/Pages/PrivacyPolicy';
 
+import AdminLogin from './components/Pages/admin/AdminLogin';
+import AdminDashboard from './components/Pages/admin/AdminDashboard';
+
 const HomePage: React.FC = () => {
   return (
     <>
@@ -51,6 +54,10 @@ const App: React.FC = () => {
           <Route path="/projects/government-buildings" element={<GovernmentBuildingsPage />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/*" element={<AdminDashboard />} />
         </Routes>
       </main>
     </>

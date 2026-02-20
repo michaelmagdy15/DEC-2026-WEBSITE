@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { PROJECTS } from '../../constants';
+import { supabase } from '../../lib/supabase';
 import { Project } from '../../types';
 import ProjectDetail from './ProjectDetail';
 
@@ -45,6 +45,15 @@ const ProjectTimeline: React.FC = () => {
         target: targetRef,
     });
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const [projects, setProjects] = useState<Project[]>([]);
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+            const { data } = await supabase.from('projects').select('*').order('id', { ascending: true });
+            if (data) setProjects(data);
+        };
+        fetchProjects();
+    }, []);
 
     // Transform vertical scroll into horizontal movement
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-65%"]);
@@ -71,7 +80,7 @@ const ProjectTimeline: React.FC = () => {
                         </div>
 
                         {/* Project Cards */}
-                        {PROJECTS.map((project) => (
+                        {projects.map((project) => (
                             <ProjectCard
                                 key={project.id}
                                 project={project}
