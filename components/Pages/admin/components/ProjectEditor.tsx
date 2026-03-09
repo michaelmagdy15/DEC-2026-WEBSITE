@@ -135,7 +135,7 @@ const ProjectEditor: React.FC = () => {
     if (loading && projects.length === 0) {
         return (
             <div className="flex justify-center py-20">
-                <Loader2 className="animate-spin text-[#F58220]" size={40} />
+                <Loader2 className="animate-spin text-primary" size={40} />
             </div>
         );
     }
@@ -147,7 +147,7 @@ const ProjectEditor: React.FC = () => {
                 {!isFormOpen && (
                     <button
                         onClick={handleAddNew}
-                        className="bg-[#F58220] hover:bg-[#F58220]/90 text-white px-6 py-2 rounded-xl transition-colors font-medium flex items-center space-x-2"
+                        className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-xl transition-colors font-medium flex items-center space-x-2"
                     >
                         <Plus size={20} />
                         <span>Add New</span>
@@ -167,27 +167,27 @@ const ProjectEditor: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Title</label>
-                            <input type="text" value={formData.title || ''} onChange={e => setFormData({ ...formData, title: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <input type="text" value={formData.title || ''} onChange={e => setFormData({ ...formData, title: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Category</label>
-                            <input type="text" value={formData.category || ''} onChange={e => setFormData({ ...formData, category: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <input type="text" value={formData.category || ''} onChange={e => setFormData({ ...formData, category: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Location</label>
-                            <input type="text" value={formData.location || ''} onChange={e => setFormData({ ...formData, location: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <input type="text" value={formData.location || ''} onChange={e => setFormData({ ...formData, location: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Year</label>
-                            <input type="text" value={formData.year || ''} onChange={e => setFormData({ ...formData, year: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <input type="text" value={formData.year || ''} onChange={e => setFormData({ ...formData, year: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                         </div>
                         <div className="md:col-span-2">
                             <label className="block text-sm font-medium text-gray-400 mb-1">Description</label>
-                            <textarea value={formData.description || ''} onChange={e => setFormData({ ...formData, description: e.target.value })} required rows={3} className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <textarea value={formData.description || ''} onChange={e => setFormData({ ...formData, description: e.target.value })} required rows={3} className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                         </div>
                         <div className="md:col-span-2">
                             <label className="block text-sm font-medium text-gray-400 mb-1">Main Image URL</label>
-                            <input type="url" value={formData.image || ''} onChange={e => setFormData({ ...formData, image: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <input type="url" value={formData.image || ''} onChange={e => setFormData({ ...formData, image: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                             {formData.image && <img src={formData.image} alt="Preview" className="mt-2 h-32 object-cover rounded-xl" />}
                         </div>
                     </div>
@@ -196,7 +196,7 @@ const ProjectEditor: React.FC = () => {
                     <div className="border border-white/10 p-4 rounded-xl">
                         <div className="flex justify-between items-center mb-4">
                             <label className="block text-sm font-medium text-gray-400">Project Stats (e.g. Area, Floors)</label>
-                            <button type="button" onClick={addStat} className="text-[#F58220] hover:text-[#FF9B44] text-sm">+ Add Stat</button>
+                            <button type="button" onClick={addStat} className="text-primary hover:text-[#FF9B44] text-sm">+ Add Stat</button>
                         </div>
                         {formData.stats?.map((stat, index) => (
                             <div key={index} className="flex gap-4 mb-2">
@@ -211,7 +211,7 @@ const ProjectEditor: React.FC = () => {
                     <div className="border border-white/10 p-4 rounded-xl">
                         <div className="flex justify-between items-center mb-4">
                             <label className="block text-sm font-medium text-gray-400">Gallery Images (URLs)</label>
-                            <button type="button" onClick={addGalleryImage} className="text-[#F58220] hover:text-[#FF9B44] text-sm">+ Add Image</button>
+                            <button type="button" onClick={addGalleryImage} className="text-primary hover:text-[#FF9B44] text-sm">+ Add Image</button>
                         </div>
                         {formData.gallery?.map((img, index) => (
                             <div key={index} className="flex gap-4 mb-2">
@@ -225,7 +225,7 @@ const ProjectEditor: React.FC = () => {
                         <button type="button" onClick={() => setIsFormOpen(false)} className="px-6 py-2 rounded-xl border border-white/10 hover:bg-white/5">
                             Cancel
                         </button>
-                        <button type="submit" disabled={loading} className="px-6 py-2 rounded-xl bg-[#F58220] hover:bg-[#F58220]/90 font-medium flex items-center space-x-2">
+                        <button type="submit" disabled={loading} className="px-6 py-2 rounded-xl bg-primary hover:bg-primary/90 font-medium flex items-center space-x-2">
                             <Save size={20} />
                             <span>Save Project</span>
                         </button>
@@ -234,12 +234,12 @@ const ProjectEditor: React.FC = () => {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.map(project => (
-                        <div key={project.id} className="bg-black/40 rounded-2xl overflow-hidden border border-white/5 hover:border-[#F58220]/50 transition-colors group">
+                        <div key={project.id} className="bg-black/40 rounded-2xl overflow-hidden border border-white/5 hover:border-primary/50 transition-colors group">
                             <div className="h-48 overflow-hidden relative">
                                 <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                                    <span className="text-xs font-semibold px-2 py-1 bg-[#F58220] rounded-md mb-2 inline-block shadow-lg">
+                                    <span className="text-xs font-semibold px-2 py-1 bg-primary rounded-md mb-2 inline-block shadow-lg">
                                         {project.category}
                                     </span>
                                     <h3 className="font-semibold truncate">{project.title}</h3>

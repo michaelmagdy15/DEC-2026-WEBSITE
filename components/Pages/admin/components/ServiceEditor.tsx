@@ -128,7 +128,7 @@ const ServiceEditor: React.FC = () => {
     if (loading && services.length === 0) {
         return (
             <div className="flex justify-center py-20">
-                <Loader2 className="animate-spin text-[#F58220]" size={40} />
+                <Loader2 className="animate-spin text-primary" size={40} />
             </div>
         );
     }
@@ -140,7 +140,7 @@ const ServiceEditor: React.FC = () => {
                 {!isFormOpen && (
                     <button
                         onClick={handleAddNew}
-                        className="bg-[#F58220] hover:bg-[#F58220]/90 text-white px-6 py-2 rounded-xl transition-colors font-medium flex items-center space-x-2"
+                        className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-xl transition-colors font-medium flex items-center space-x-2"
                     >
                         <Plus size={20} />
                         <span>Add New</span>
@@ -160,23 +160,23 @@ const ServiceEditor: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Service ID (Unique, e.g. "arch")</label>
-                            <input type="text" value={formData.id || ''} onChange={e => setFormData({ ...formData, id: e.target.value })} disabled={!!editingId} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220] disabled:opacity-50" />
+                            <input type="text" value={formData.id || ''} onChange={e => setFormData({ ...formData, id: e.target.value })} disabled={!!editingId} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary disabled:opacity-50" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Title</label>
-                            <input type="text" value={formData.title || ''} onChange={e => setFormData({ ...formData, title: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <input type="text" value={formData.title || ''} onChange={e => setFormData({ ...formData, title: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Icon (e.g. ruler, frame, zap, hardhat)</label>
-                            <input type="text" value={formData.icon || ''} onChange={e => setFormData({ ...formData, icon: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <input type="text" value={formData.icon || ''} onChange={e => setFormData({ ...formData, icon: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                         </div>
                         <div className="md:col-span-2">
                             <label className="block text-sm font-medium text-gray-400 mb-1">Description</label>
-                            <textarea value={formData.description || ''} onChange={e => setFormData({ ...formData, description: e.target.value })} required rows={2} className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <textarea value={formData.description || ''} onChange={e => setFormData({ ...formData, description: e.target.value })} required rows={2} className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                         </div>
                         <div className="md:col-span-2">
                             <label className="block text-sm font-medium text-gray-400 mb-1">Main Image URL</label>
-                            <input type="url" value={formData.image || ''} onChange={e => setFormData({ ...formData, image: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <input type="url" value={formData.image || ''} onChange={e => setFormData({ ...formData, image: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                             {formData.image && <img src={formData.image} alt="Preview" className="mt-2 h-32 object-cover rounded-xl" />}
                         </div>
                     </div>
@@ -185,7 +185,7 @@ const ServiceEditor: React.FC = () => {
                     <div className="border border-white/10 p-4 rounded-xl">
                         <div className="flex justify-between items-center mb-4">
                             <label className="block text-sm font-medium text-gray-400">Service Details (Sub-sections and lists)</label>
-                            <button type="button" onClick={addDetailSection} className="text-[#F58220] hover:text-[#FF9B44] text-sm">+ Add Detail Section</button>
+                            <button type="button" onClick={addDetailSection} className="text-primary hover:text-[#FF9B44] text-sm">+ Add Detail Section</button>
                         </div>
                         {formData.details?.map((detail, index) => (
                             <div key={index} className="flex gap-4 mb-4 border-b border-white/10 pb-4">
@@ -202,7 +202,7 @@ const ServiceEditor: React.FC = () => {
                         <button type="button" onClick={() => setIsFormOpen(false)} className="px-6 py-2 rounded-xl border border-white/10 hover:bg-white/5">
                             Cancel
                         </button>
-                        <button type="submit" disabled={loading} className="px-6 py-2 rounded-xl bg-[#F58220] hover:bg-[#F58220]/90 font-medium flex items-center space-x-2">
+                        <button type="submit" disabled={loading} className="px-6 py-2 rounded-xl bg-primary hover:bg-primary/90 font-medium flex items-center space-x-2">
                             <Save size={20} />
                             <span>Save Service</span>
                         </button>
@@ -211,9 +211,9 @@ const ServiceEditor: React.FC = () => {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map(service => (
-                        <div key={service.id} className="bg-black/40 rounded-2xl overflow-hidden border border-white/5 hover:border-[#F58220]/50 transition-colors group p-6 flex flex-col justify-between">
+                        <div key={service.id} className="bg-black/40 rounded-2xl overflow-hidden border border-white/5 hover:border-primary/50 transition-colors group p-6 flex flex-col justify-between">
                             <div>
-                                <div className="w-12 h-12 bg-[#F58220]/20 rounded-xl flex items-center justify-center mb-4 text-[#F58220]">
+                                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4 text-primary">
                                     {/* Since we use real lucide icons dynamically elsewhere, just put initials here for preview */}
                                     {service.icon.substring(0, 2).toUpperCase()}
                                 </div>

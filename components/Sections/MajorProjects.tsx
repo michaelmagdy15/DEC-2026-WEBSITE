@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MAJOR_PROJECTS_CATEGORIES } from '../../constants';
 
+import { useSiteContent } from '../Context/SiteContentContext';
+
 const MajorProjects: React.FC = () => {
+    const { content } = useSiteContent();
+    const projectsContent = content.projects || {};
+
     const [activeId, setActiveId] = useState(MAJOR_PROJECTS_CATEGORIES[0].id);
     const activeCategory = MAJOR_PROJECTS_CATEGORIES.find(cat => cat.id === activeId) || MAJOR_PROJECTS_CATEGORIES[0];
 
@@ -36,7 +41,7 @@ const MajorProjects: React.FC = () => {
                     {/* Left Side: Featured Image & Title */}
                     <div className="w-full lg:w-5/12 flex flex-col gap-6 relative">
                         {/* Decorative line */}
-                        <div className="absolute -left-4 top-10 bottom-10 w-1 bg-gradient-to-b from-[#F58220] to-transparent opacity-50 hidden lg:block" />
+                        <div className="absolute -left-4 top-10 bottom-10 w-1 bg-gradient-to-b from-primary to-transparent opacity-50 hidden lg:block" />
 
                         <div className="relative h-[280px] sm:h-[400px] lg:h-[600px] w-full rounded-sm overflow-hidden shadow-2xl border border-white/10 group">
                             <AnimatePresence mode="wait">
@@ -54,13 +59,11 @@ const MajorProjects: React.FC = () => {
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
 
                             {/* Overlay Title Block */}
-                            <div className="absolute bottom-4 sm:bottom-10 left-0 bg-[#0a0a0a]/95 backdrop-blur-md p-4 sm:p-8 max-w-[90%] shadow-2xl border-r-4 border-[#F58220]">
-                                <h3 className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#888] uppercase mb-1 sm:mb-2">Dar Al Khalij</h3>
-                                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-none text-white">
-                                    MAJOR <br /> PROJECTS
-                                </h2>
-                                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-none text-[#F58220] mt-1">
-                                    REFERENCES
+                            <div className="absolute bottom-4 sm:bottom-10 left-0 bg-[#0a0a0a]/95 backdrop-blur-md p-4 sm:p-8 max-w-[90%] shadow-2xl border-r-4 border-primary">
+                                <h3 className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#888] uppercase mb-1 sm:mb-2">{projectsContent.subtitle || 'Dar Al Khalij'}</h3>
+                                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-none text-white" dangerouslySetInnerHTML={{ __html: projectsContent.title || 'MAJOR <br /> PROJECTS' }} />
+                                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-none text-primary mt-1">
+                                    {projectsContent.accent_title || 'REFERENCES'}
                                 </h2>
                             </div>
                         </div>
@@ -102,7 +105,7 @@ const MajorProjects: React.FC = () => {
                                             >
                                                 {category.items.map((item, idx) => (
                                                     <li key={idx} className="text-sm opacity-90 flex items-start gap-2 text-gray-300">
-                                                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#F58220]"></span>
+                                                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary"></span>
                                                         {item}
                                                     </li>
                                                 ))}
@@ -117,7 +120,7 @@ const MajorProjects: React.FC = () => {
 
                                     {/* Active Selection Indicator */}
                                     {isActive && (
-                                        <div className="absolute right-0 top-0 bottom-0 w-1 bg-[#F58220]" />
+                                        <div className="absolute right-0 top-0 bottom-0 w-1 bg-primary" />
                                     )}
                                 </motion.div>
                             );

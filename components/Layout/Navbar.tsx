@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo Area */}
         <Link to="/" className="relative z-50 group">
-          <div className="p-2 bg-black/50 backdrop-blur-sm rounded-md border border-white/5 group-hover:border-[#F58220]/50 transition-colors">
+          <div className="p-2 bg-black/50 backdrop-blur-sm rounded-md border border-white/5 group-hover:border-primary/50 transition-colors">
             <Logo />
           </div>
         </Link>
@@ -121,15 +121,15 @@ const Navbar: React.FC = () => {
             onMouseLeave={handleDropdownLeave}
           >
             <button
-              className="flex items-center gap-1 text-xs lg:text-sm uppercase tracking-widest font-bold text-gray-300 hover:text-[#F58220] transition-colors relative group"
+              className="flex items-center gap-1 text-xs lg:text-sm uppercase tracking-widest font-bold text-gray-300 hover:text-primary transition-colors relative group"
               onClick={() => handleNavClick('/#projects')}
             >
               Projects
               <ChevronDown
                 size={14}
-                className={`transition-transform duration-300 ${isProjectsOpen ? 'rotate-180 text-[#F58220]' : ''}`}
+                className={`transition-transform duration-300 ${isProjectsOpen ? 'rotate-180 text-primary' : ''}`}
               />
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#F58220] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </button>
 
             <AnimatePresence>
@@ -142,16 +142,16 @@ const Navbar: React.FC = () => {
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 bg-[#111]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl shadow-black/50 overflow-hidden"
                 >
                   {/* Orange accent bar at top */}
-                  <div className="h-[2px] bg-gradient-to-r from-transparent via-[#F58220] to-transparent" />
+                  <div className="h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent" />
 
                   <div className="py-2">
                     {PROJECT_SUBITEMS.map((item) => (
                       <button
                         key={item.name}
                         onClick={() => handleNavClick(item.href)}
-                        className="w-full text-left px-5 py-3 text-sm tracking-wide text-gray-300 hover:text-white hover:bg-[#F58220]/10 transition-all duration-200 flex items-center gap-3 group/item"
+                        className="w-full text-left px-5 py-3 text-sm tracking-wide text-gray-300 hover:text-white hover:bg-primary/10 transition-all duration-200 flex items-center gap-3 group/item"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#F58220]/40 group-hover/item:bg-[#F58220] transition-colors duration-200" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover/item:bg-primary transition-colors duration-200" />
                         {item.name}
                       </button>
                     ))}
@@ -166,16 +166,16 @@ const Navbar: React.FC = () => {
             <button
               key={link.name}
               onClick={() => handleNavClick(link.href)}
-              className="text-xs lg:text-sm uppercase tracking-widest font-bold text-gray-300 hover:text-[#F58220] transition-colors relative group"
+              className="text-xs lg:text-sm uppercase tracking-widest font-bold text-gray-300 hover:text-primary transition-colors relative group"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#F58220] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </button>
           ))}
 
           <button
             onClick={() => handleNavClick('#contact')}
-            className="hidden lg:block px-6 py-2 border border-[#F58220] text-[#F58220] text-xs font-bold uppercase tracking-widest hover:bg-[#F58220] hover:text-white transition-all duration-300"
+            className="hidden lg:block px-6 py-2 border border-primary text-primary text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300"
           >
             Get in Touch
           </button>
@@ -209,7 +209,7 @@ const Navbar: React.FC = () => {
             >
               {/* Close Button - Optional duplicate if we want one inside too, keeping logic consistent */}
               <motion.button
-                className="absolute top-6 right-6 text-white hover:text-[#F58220] transition-colors"
+                className="absolute top-6 right-6 text-white hover:text-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 whileTap={{ scale: 0.9 }}
@@ -241,12 +241,12 @@ const Navbar: React.FC = () => {
                 >
                   <button
                     onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
-                    className="flex items-center gap-2 text-2xl font-bold tracking-tight text-white hover:text-[#F58220] transition-colors"
+                    className="flex items-center gap-2 text-2xl font-bold tracking-tight text-white hover:text-primary transition-colors"
                   >
                     Projects
                     <ChevronDown
                       size={20}
-                      className={`transition-transform duration-300 ${mobileProjectsOpen ? 'rotate-180 text-[#F58220]' : ''}`}
+                      className={`transition-transform duration-300 ${mobileProjectsOpen ? 'rotate-180 text-primary' : ''}`}
                     />
                   </button>
                   <AnimatePresence>
@@ -262,7 +262,7 @@ const Navbar: React.FC = () => {
                           <motion.button
                             key={item.name}
                             onClick={() => handleNavClick(item.href)}
-                            className="text-base text-gray-400 hover:text-[#F58220] transition-colors"
+                            className="text-base text-gray-400 hover:text-primary transition-colors"
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.2 }}
@@ -280,7 +280,7 @@ const Navbar: React.FC = () => {
                   <motion.button
                     key={link.name}
                     onClick={() => handleNavClick(link.href)}
-                    className="text-2xl font-bold tracking-tight text-white hover:text-[#F58220]"
+                    className="text-2xl font-bold tracking-tight text-white hover:text-primary"
                     variants={{
                       open: { opacity: 1, y: 0 },
                       closed: { opacity: 0, y: 20 }

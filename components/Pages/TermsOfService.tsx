@@ -9,7 +9,7 @@ const TermsOfService: React.FC = () => {
     }, []);
 
     return (
-        <div className="bg-[#0f0f0f] min-h-screen text-white selection:bg-[#F58220] selection:text-white">
+        <div className="bg-[#0f0f0f] min-h-screen text-white selection:bg-primary selection:text-white">
             <Navbar />
             <div className="pt-28" />
 
@@ -17,14 +17,14 @@ const TermsOfService: React.FC = () => {
                 {/* Back Navigation */}
                 <Link
                     to="/"
-                    className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-gray-400 hover:text-[#F58220] transition-colors duration-300 mb-12"
+                    className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-gray-400 hover:text-primary transition-colors duration-300 mb-12"
                 >
                     <ArrowLeft size={16} />
                     Back to Home
                 </Link>
 
                 <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4">
-                    Terms of <span className="text-[#F58220]">Service</span>
+                    Terms of <span className="text-primary">Service</span>
                 </h1>
                 <p className="text-sm text-gray-500 mb-12">Last updated: February 17, 2026</p>
 
@@ -87,7 +87,7 @@ const TermsOfService: React.FC = () => {
                         <div className="mt-3 p-4 border border-white/10 rounded-lg bg-white/[0.02]">
                             <p className="font-bold text-white">DEC Engineering Consultant</p>
                             <p>P.O. BOX 45080, Abu Dhabi, United Arab Emirates</p>
-                            <p>Email: <a href="mailto:dec2000@emirates.net.ae" className="text-[#F58220] hover:underline">dec2000@emirates.net.ae</a></p>
+                            <p>Email: <a href="mailto:dec2000@emirates.net.ae" className="text-primary hover:underline">dec2000@emirates.net.ae</a></p>
                             <p>Tel: +971 26443200</p>
                         </div>
                     </section>

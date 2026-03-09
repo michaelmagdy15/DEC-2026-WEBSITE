@@ -12,7 +12,7 @@ const GovernmentBuildings: React.FC = () => {
                     <div className="absolute inset-0 flex items-center">
                         <div className="w-full h-[1px] bg-[#333]"></div>
                     </div>
-                    <div className="relative bg-[#F58220] py-3 sm:py-4 px-6 sm:px-12 shadow-[0_10px_30px_rgba(245,130,32,0.3)] transform -skew-x-12 border border-[#ffa050]">
+                    <div className="relative bg-primary py-3 sm:py-4 px-6 sm:px-12 shadow-[0_10px_30px_rgba(245,130,32,0.3)] transform -skew-x-12 border border-[#ffa050]">
                         <h2 className="text-lg sm:text-2xl md:text-3xl font-bold uppercase tracking-wider sm:tracking-widest text-white transform skew-x-12 text-center">
                             Government & Office Buildings
                         </h2>
@@ -31,7 +31,7 @@ const GovernmentBuildings: React.FC = () => {
                             className="group flex flex-col"
                         >
                             {/* Card Container with Dashed Border */}
-                            <div className="p-3 border border-dashed border-[#333] rounded-sm hover:border-[#F58220] transition-colors duration-500 bg-[#111] hover:bg-[#161616]">
+                            <div className="p-3 border border-dashed border-[#333] rounded-sm hover:border-primary transition-colors duration-500 bg-[#111] hover:bg-[#161616]">
                                 <div className="relative overflow-hidden aspect-[4/3] cursor-pointer">
                                     <motion.img
                                         src={project.image}
@@ -47,11 +47,11 @@ const GovernmentBuildings: React.FC = () => {
 
                             {/* Title Below */}
                             <div className="mt-5 flex items-center justify-center gap-3 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
-                                <div className="h-[1px] w-8 bg-[#F58220] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right"></div>
+                                <div className="h-[1px] w-8 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right"></div>
                                 <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-[#888] group-hover:text-white transition-colors duration-300 text-center">
                                     {project.title}
                                 </h3>
-                                <div className="h-[1px] w-8 bg-[#F58220] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                                <div className="h-[1px] w-8 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                             </div>
                         </motion.div>
                     ))}

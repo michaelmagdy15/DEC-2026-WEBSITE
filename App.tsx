@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Layout/Navbar';
@@ -38,8 +38,17 @@ const HomePage: React.FC = () => {
   );
 };
 
+import { useSiteContent } from './components/Context/SiteContentContext';
+
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
+  const { content } = useSiteContent();
+
+  const primaryColor = content.theme?.primary || '#F58220';
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--theme-primary', primaryColor);
+  }, [primaryColor]);
 
   return (
     <>
@@ -48,7 +57,7 @@ const App: React.FC = () => {
         {loading && <Preloader onComplete={() => setLoading(false)} />}
       </AnimatePresence>
 
-      <main className="bg-[#0f0f0f] min-h-screen text-white selection:bg-[#F58220] selection:text-white">
+      <main className="bg-[#0f0f0f] min-h-screen text-white selection:bg-primary selection:text-white">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects/government-buildings" element={<GovernmentBuildingsPage />} />

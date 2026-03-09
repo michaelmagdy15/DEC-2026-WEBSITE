@@ -46,7 +46,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
       {/* Close Button - Sticky/Fixed */}
       <button
         onClick={onClose}
-        className="fixed top-6 right-6 z-[70] p-3 md:p-4 bg-black/50 hover:bg-[#F58220] text-white rounded-full backdrop-blur-md transition-all duration-300 group border border-white/10"
+        className="fixed top-6 right-6 z-[70] p-3 md:p-4 bg-black/50 hover:bg-primary text-white rounded-full backdrop-blur-md transition-all duration-300 group border border-white/10"
       >
         <X className="w-6 h-6 group-hover:rotate-90 transition-transform" />
       </button>
@@ -75,7 +75,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-[#F58220] font-mono text-sm tracking-widest uppercase mb-4 block"
+              className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block"
             >
               Project Overview
             </motion.span>
@@ -93,7 +93,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
               transition={{ delay: 0.6 }}
               className="flex items-center gap-3 text-white/60"
             >
-              <ArrowDown className="w-5 h-5 animate-bounce text-[#F58220]" />
+              <ArrowDown className="w-5 h-5 animate-bounce text-primary" />
               <span className="text-sm uppercase tracking-widest">Scroll to Explore</span>
             </motion.div>
           </div>
@@ -108,7 +108,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
             {/* Main Narrative */}
             <div className="lg:col-span-8">
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-6 sm:mb-10 leading-tight">
-                Redefining the skyline through <span className="text-[#F58220]">{project.category.toLowerCase()}</span> excellence.
+                Redefining the skyline through <span className="text-primary">{project.category.toLowerCase()}</span> excellence.
               </h2>
               <div className="space-y-6 sm:space-y-8 text-gray-400 text-base sm:text-lg leading-relaxed font-light">
                 <p>{project.description}</p>
@@ -125,16 +125,16 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
             <div className="lg:col-span-4 space-y-10 lg:pl-10 lg:border-l border-white/10 h-fit">
               {project.stats?.map((stat, idx) => (
                 <div key={idx} className="group">
-                  <h4 className="text-gray-500 uppercase text-xs tracking-wider mb-2 group-hover:text-[#F58220] transition-colors">{stat.label}</h4>
+                  <h4 className="text-gray-500 uppercase text-xs tracking-wider mb-2 group-hover:text-primary transition-colors">{stat.label}</h4>
                   <p className="text-xl sm:text-3xl text-white font-mono">{stat.value}</p>
                 </div>
               ))}
               <div className="group">
-                <h4 className="text-gray-500 uppercase text-xs tracking-wider mb-2 group-hover:text-[#F58220] transition-colors">Year</h4>
+                <h4 className="text-gray-500 uppercase text-xs tracking-wider mb-2 group-hover:text-primary transition-colors">Year</h4>
                 <p className="text-xl sm:text-3xl text-white font-mono">{project.year}</p>
               </div>
               <div className="group">
-                <h4 className="text-gray-500 uppercase text-xs tracking-wider mb-2 group-hover:text-[#F58220] transition-colors">Location</h4>
+                <h4 className="text-gray-500 uppercase text-xs tracking-wider mb-2 group-hover:text-primary transition-colors">Location</h4>
                 <p className="text-xl sm:text-3xl text-white font-mono">{project.location}</p>
               </div>
             </div>
@@ -170,7 +170,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
 
         {/* Footer/Next */}
         <div className="py-20 border-t border-white/10 text-center">
-          <button onClick={onClose} className="text-[#F58220] uppercase tracking-widest text-sm font-bold hover:text-white transition-colors">
+          <button onClick={onClose} className="text-primary uppercase tracking-widest text-sm font-bold hover:text-white transition-colors">
             Back to Projects
           </button>
         </div>

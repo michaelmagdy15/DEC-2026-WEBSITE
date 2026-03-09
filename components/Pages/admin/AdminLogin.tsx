@@ -70,7 +70,7 @@ const AdminLogin: React.FC = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
-                                className="w-full bg-black/50 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#F58220] transition-colors"
+                                className="w-full bg-black/50 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
                                 placeholder="admin@dec.com"
                             />
                         </div>
@@ -89,7 +89,7 @@ const AdminLogin: React.FC = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
-                                className="w-full bg-black/50 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#F58220] transition-colors"
+                                className="w-full bg-black/50 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
                                 placeholder="••••••••"
                             />
                         </div>
@@ -98,7 +98,7 @@ const AdminLogin: React.FC = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-[#F58220] hover:bg-[#F58220]/90 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-70"
+                        className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-70"
                     >
                         {loading ? (
                             <Loader2 className="animate-spin" size={20} />

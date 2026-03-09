@@ -92,7 +92,7 @@ const TeamEditor: React.FC = () => {
     if (loading && members.length === 0) {
         return (
             <div className="flex justify-center py-20">
-                <Loader2 className="animate-spin text-[#F58220]" size={40} />
+                <Loader2 className="animate-spin text-primary" size={40} />
             </div>
         );
     }
@@ -104,7 +104,7 @@ const TeamEditor: React.FC = () => {
                 {!isFormOpen && (
                     <button
                         onClick={handleAddNew}
-                        className="bg-[#F58220] hover:bg-[#F58220]/90 text-white px-6 py-2 rounded-xl transition-colors font-medium flex items-center space-x-2"
+                        className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-xl transition-colors font-medium flex items-center space-x-2"
                     >
                         <Plus size={20} />
                         <span>Add New</span>
@@ -124,15 +124,15 @@ const TeamEditor: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Name</label>
-                            <input type="text" value={formData.name || ''} onChange={e => setFormData({ ...formData, name: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <input type="text" value={formData.name || ''} onChange={e => setFormData({ ...formData, name: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Role / Position</label>
-                            <input type="text" value={formData.role || ''} onChange={e => setFormData({ ...formData, role: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <input type="text" value={formData.role || ''} onChange={e => setFormData({ ...formData, role: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                         </div>
                         <div className="md:col-span-2">
                             <label className="block text-sm font-medium text-gray-400 mb-1">Image URL</label>
-                            <input type="url" value={formData.image || ''} onChange={e => setFormData({ ...formData, image: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-[#F58220]" />
+                            <input type="url" value={formData.image || ''} onChange={e => setFormData({ ...formData, image: e.target.value })} required className="w-full bg-black/50 border border-white/10 rounded-xl py-2 px-4 text-white focus:border-primary" />
                             {formData.image && <img src={formData.image} alt="Preview" className="mt-2 w-32 h-32 object-cover rounded-xl" />}
                         </div>
                     </div>
@@ -141,7 +141,7 @@ const TeamEditor: React.FC = () => {
                         <button type="button" onClick={() => setIsFormOpen(false)} className="px-6 py-2 rounded-xl border border-white/10 hover:bg-white/5">
                             Cancel
                         </button>
-                        <button type="submit" disabled={loading} className="px-6 py-2 rounded-xl bg-[#F58220] hover:bg-[#F58220]/90 font-medium flex items-center space-x-2">
+                        <button type="submit" disabled={loading} className="px-6 py-2 rounded-xl bg-primary hover:bg-primary/90 font-medium flex items-center space-x-2">
                             <Save size={20} />
                             <span>Save Member</span>
                         </button>
@@ -150,13 +150,13 @@ const TeamEditor: React.FC = () => {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {members.map(member => (
-                        <div key={member.id} className="bg-black/40 rounded-2xl overflow-hidden border border-white/5 hover:border-[#F58220]/50 transition-colors group">
+                        <div key={member.id} className="bg-black/40 rounded-2xl overflow-hidden border border-white/5 hover:border-primary/50 transition-colors group">
                             <div className="aspect-[3/4] overflow-hidden relative">
                                 <img src={member.image} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent"></div>
                                 <div className="absolute bottom-4 left-4 right-4 text-white">
                                     <h3 className="font-semibold text-lg">{member.name}</h3>
-                                    <p className="text-[#F58220] text-sm">{member.role}</p>
+                                    <p className="text-primary text-sm">{member.role}</p>
                                 </div>
                             </div>
                             <div className="p-3 flex items-center justify-end bg-[#1a1a1a]">

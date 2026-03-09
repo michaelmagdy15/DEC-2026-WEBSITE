@@ -25,7 +25,7 @@ const Branches: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="text-[#F58220] font-mono text-sm tracking-[0.3em] uppercase mb-4 block">
+                        <span className="text-primary font-mono text-sm tracking-[0.3em] uppercase mb-4 block">
                             Our Presence
                         </span>
                         <h2 className="text-4xl md:text-6xl text-white font-bold tracking-tighter mb-8">
@@ -42,9 +42,9 @@ const Branches: React.FC = () => {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 * index, duration: 0.6 }}
-                            className="bg-[#151515] border border-white/5 p-8 hover:border-[#F58220]/50 transition-colors duration-300 group"
+                            className="bg-[#151515] border border-white/5 p-8 hover:border-primary/50 transition-colors duration-300 group"
                         >
-                            <h3 className="text-xl font-bold text-[#F58220] mb-6 tracking-wide group-hover:translate-x-2 transition-transform duration-300">
+                            <h3 className="text-xl font-bold text-primary mb-6 tracking-wide group-hover:translate-x-2 transition-transform duration-300">
                                 {branch.city}
                             </h3>
                             <div className="space-y-3 font-mono text-sm text-gray-400">

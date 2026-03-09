@@ -46,7 +46,7 @@ const LogoCard: React.FC<{ client: Client; index: number }> = ({ client, index }
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.03, duration: 0.4 }}
-            className="group bg-white rounded-md border border-gray-100 p-5 flex flex-col items-center justify-center min-h-[100px] gap-3 hover:shadow-lg hover:border-[#F58220]/30 transition-all duration-400 cursor-default"
+            className="group bg-white rounded-md border border-gray-100 p-5 flex flex-col items-center justify-center min-h-[100px] gap-3 hover:shadow-lg hover:border-primary/30 transition-all duration-400 cursor-default"
         >
             {client.logo && !imgError ? (
                 <>
@@ -91,7 +91,7 @@ const Clients: React.FC = () => {
                         whileInView={{ scaleX: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.3 }}
-                        className="h-1.5 w-24 bg-[#F58220] mt-4 origin-left"
+                        className="h-1.5 w-24 bg-primary mt-4 origin-left"
                     />
                 </div>
 

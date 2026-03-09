@@ -1,30 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LOGO_URL } from '../../constants';
+import { useSiteContent } from '../Context/SiteContentContext';
 
 const Contact: React.FC = () => {
+  const { content } = useSiteContent();
+  const contactContent = content.contact || {};
+
   return (
     <footer id="contact" className="bg-[#050505] pt-16 sm:pt-24 pb-8 sm:pb-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 mb-12 sm:mb-20">
           <div>
-            <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 sm:mb-8">
-              Let's Build <br />
-              <span className="text-[#F58220]">The Future.</span>
-            </h2>
-            <p className="text-gray-400 text-base sm:text-lg max-w-md mb-6 sm:mb-8">
-              Start a conversation with DEC Engineering Consultant about your next visionary project.
-            </p>
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 sm:mb-8"
+              dangerouslySetInnerHTML={{ __html: contactContent.heading || 'Let\'s Build <br /><span class="text-primary">The Future.</span>' }}
+            />
+            <p className="text-gray-400 text-base sm:text-lg max-w-md mb-6 sm:mb-8"
+              dangerouslySetInnerHTML={{ __html: contactContent.text || 'Start a conversation with DEC Engineering Consultant about your next visionary project.' }}
+            />
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
-                href="mailto:dec2000@emirates.net.ae?subject=New%20Project%20Inquiry"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-black font-bold uppercase tracking-widest text-sm sm:text-base hover:bg-[#F58220] hover:text-white transition-colors duration-300 w-full sm:w-auto text-center inline-block"
+                href={`mailto:${contactContent.email || 'dec2000@emirates.net.ae'}?subject=New%20Project%20Inquiry`}
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-black font-bold uppercase tracking-widest text-sm sm:text-base hover:bg-primary hover:text-white transition-colors duration-300 w-full sm:w-auto text-center inline-block"
               >
                 Start Project
               </a>
               <a
                 href="mailto:dec2000@emirates.net.ae?subject=Careers%20Inquiry"
-                className="px-6 sm:px-8 py-3 sm:py-4 border border-white/30 text-white font-bold uppercase tracking-widest text-sm sm:text-base hover:border-[#F58220] hover:text-[#F58220] transition-colors duration-300 w-full sm:w-auto text-center inline-block"
+                className="px-6 sm:px-8 py-3 sm:py-4 border border-white/30 text-white font-bold uppercase tracking-widest text-sm sm:text-base hover:border-primary hover:text-primary transition-colors duration-300 w-full sm:w-auto text-center inline-block"
               >
                 Careers
               </a>
@@ -37,18 +40,18 @@ const Contact: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="text-xs font-bold text-[#F58220] uppercase tracking-widest mb-2">Abu Dhabi Branch</h4>
+              <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-2">Abu Dhabi Branch</h4>
               <p className="text-white">P.O. BOX: 45080<br />Abu Dhabi, United Arab Emirates</p>
               <p className="text-white mt-1">Tel: +971 26443200</p>
               <p className="text-white">Fax: +971 26443321</p>
-              <a href="mailto:dec2000@emirates.net.ae" className="text-white hover:text-[#F58220] transition-colors cursor-pointer block">dec2000@emirates.net.ae</a>
+              <a href="mailto:dec2000@emirates.net.ae" className="text-white hover:text-primary transition-colors cursor-pointer block">dec2000@emirates.net.ae</a>
             </div>
 
             <div>
-              <h4 className="text-xs font-bold text-[#F58220] uppercase tracking-widest mb-2">Cairo Branch</h4>
+              <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-2">Cairo Branch</h4>
               <p className="text-white">P.O. BOX: 24, Fawzy, el Motaiee st.</p>
               <p className="text-white mt-1">Tel: +20224153765</p>
-              <a href="mailto:decegypt@gmail.com" className="text-white hover:text-[#F58220] transition-colors cursor-pointer block">decegypt@gmail.com</a>
+              <a href="mailto:decegypt@gmail.com" className="text-white hover:text-primary transition-colors cursor-pointer block">decegypt@gmail.com</a>
             </div>
 
             <div className="flex gap-6 pt-4">
